@@ -1,4 +1,5 @@
-import tkinter as tk
+from src.close_window import close_window
 
-def close_program(window):
-    window.after(0, window.destroy)
+
+def close_program(window, canvas):
+    close_window(window, canvas)

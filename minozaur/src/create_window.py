@@ -1,23 +1,5 @@
 import tkinter as tk
-from PIL import Image, ImageTk
 from pathlib import Path
-
-
-def add_panel(text_id, pad=10):
-    x1, y1, x2, y2 = canvas.bbox(text_id)     
-    x1, y1, x2, y2 = x1 - pad, y1 - pad, x2 + pad, y2 + pad
-
-    width = int(x2 - x1)
-    height = int(y2 - y1)
-
-    pic = Image.new("RGBA", (width, height), (0, 0, 0, ALPHA))
-    photo = ImageTk.PhotoImage(pic)
-    panel_images.append(photo)
-
-    panel_id = canvas.create_image(x1, y1, image=photo, anchor="nw")
-    canvas.tag_lower(panel_id, text_id)       
-    return panel_id
-
 
 # Utworzenie głównego okna + canvas:
 def create_window():
@@ -57,15 +39,4 @@ def create_window():
     )
 
 
-    # Menu:
-
-    menu_text = canvas.create_text(
-        180,
-        420,
-        text="Wybierz operację:",
-        font=("Arial", 16, "bold"),
-        fill="white"
-    )
-    add_panel(menu_text)
-
-    return(windows, canvas)
+    return(window, canvas)
