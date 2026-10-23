@@ -55,7 +55,11 @@ def stop_animation(canvas):
         canvas.after_cancel(after_id)
         after_id = None
 
-def create_menu_option(canvas, on_close):
+def create_menu_option(canvas: tk.Canvas,
+                        height: int,
+                        text: str,
+                        *operations: Callable,
+                        on_close):
     menu_text = canvas.create_text(
         180,
         420,
