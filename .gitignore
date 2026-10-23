@@ -1,5 +1,5 @@
 /scripts/temp
 /scripts/dane/
-/__pycache__/
+**/__pycache__/
 /minozaur/minozaur_tools.py
 
